@@ -100,6 +100,63 @@ Else:
 }
 ```
 
-- Insert money in a user cash
+- Insert money in a user cash `url.com/insert_money/`
 
-- Use a service
+**Send:**
+
+```
+{
+    'username' : <cpf>,
+    'money': <money as float>
+}
+```
+
+**Receive:**
+
+If user exists:
+
+```
+{
+    'status' : 'success'
+}
+```
+
+Else:
+
+```
+{
+    'status' : 'failure'
+}
+```
+
+- Use a service (BU, 99, Yellow) `url.com/use_service/`
+
+**Send:**
+
+```
+{
+    'username' : <cpf>,
+    'service' : <'99', 'bo' or 'yellow'>
+    'money'
+}
+```
+
+**Receive:**
+
+If user exists:
+
+```
+{
+    'money' : <user_money>
+}
+```
+
+Else:
+
+```
+{
+    'money' : -1
+}
+```
+
+
