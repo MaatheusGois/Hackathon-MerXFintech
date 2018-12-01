@@ -71,3 +71,31 @@ Else:
     'login' : 'false'
 ⁾)
 ```
+
+- Get user cash `url.com\get_money\`
+
+**Send:**
+
+```
+{
+    'username' : <cpf>
+}
+```
+
+**Receive:**
+
+If user exists:
+
+```
+{
+    'money' : <user_money>
+}
+```
+
+Else:
+
+```
+{
+    'money' : -1
+}
+```
