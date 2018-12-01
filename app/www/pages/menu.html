@@ -1,24 +1,101 @@
 <template>
   <div class="page no-swipeback">
-    <div class="navbar">
-      <div class="navbar-inner sliding nav">
-        <div class="title" style="color:#fff;">Grupos</div>
+    <div class="page-content background-menu">
+      <div class="perfil">
+        <a href="/perfil/" class="img-perfil"></a>
+      </div>
+
+      <a href="/historico/">
+        <div class="" id="card-menu">
+          <div class="card-h">
+            <p class="colorWhite card-h-p1">Seu saldo atual é de</p>
+            <p class="colorWhite card-h-p2">R$ 304,00</p>
+          </div>
+          <div class="card-f">
+            <p class="card-f-p1">Adiquira mais creditos</p>
+          </div>
+        </div>
+      </a>
+      <div class="possibilidades-menu">
+        <p class="possibilidades-menu-p">> Suas Possibilidades</p>
+      </div>
+      <div class="butons-menu-app">
+        <a href="/99/" class="list-button button-login">99</a>
+        <a href="/yellow/" class="list-button button-login">YELLOW</a>
+        <a href="/bilheteUnico/" class="list-button button-login">BILHETE ÚNICO</a>
+      </div>
+
+    </div>
+    <div class="popover popover-links">
+      <div class="popover-inner">
+        <div class="list">
+          <ul>
+            <li>
+              <a class="list-button item-link" href="/profile/" @click="BTNprofile">Meu Perfil</a>
+            </li>
+            <li>
+              <a class="list-button item-link" @click="confirmaSair" href="#">Sair</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
-
-    <div class="page-content fg" id="ti">
-
-    </div>
+  </div>
 </template>
 <style>
+  .demo-card-header-pic .card-header {
+    height: 40vw;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+  }
 
+  .demo-card-header-pic .centered {
+    padding-left: 42%;
+  }
 </style>
 <script>
   return {
-    data: function () { },
-    methods: { },
+    data: function () {
+      return { titulo: 'Menu', nomeDeUsuario: this.$app.data.username }
+    },
     on: {
-      pageInit: function () { }
+      pageInit: function () {
+        var items = DB.criancas;
+        let data = { userID: localStorage.userID, type: localStorage.type, crecheID: localStorage.crecheID }
+        let url = 'http://201.6.243.44:3877/api/listagemDeCriancas';
+        fetch(url,
+          {
+            method: "post",
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+          })
+          .then(res => res.json())
+          .then(res => {
+            localStorage.setItem('crianca', JSON.stringify(res))
+          })
+          .catch((error) => {
+            console.log('Request failure: ', error);
+          })
+      }
+    },
+    methods: {
+      confirmaSair: function () {
+        var $ = this.$;
+        var app = this.$app;
+        var router = this.$router;
+        app.dialog.confirm('Tem certesa que deseja sair?', function () {
+          app.dialog.alert('Até logo!');
+          // TODO: User Logout
+          app.popover.close('.popover-links');
+          router.navigate('/index/');
+        });
+      },
+      BTNprofile: function () {
+        app.popover.close('.popover-links');
+      }
     }
   }
 </script>

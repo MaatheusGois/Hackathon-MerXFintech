@@ -1,0 +1,117 @@
+<template>
+  <div class="page no-toolbar no-navbar">
+    <div class="page-content login-screen-content background background-login">
+
+
+      <form class="height-top-40vh padd-lr-5vw">
+
+          <div class="list">
+              <ul>
+                <li>
+                  <div class="link-login-rec2"><a href="#" id="button-reset" class="list-button font-serrat link-login-rec-a">Esqueci Minha Senha</a></div>
+                </li>
+              </ul>
+            </div>
+        <div class="list">
+          <ul>
+            <li class="item-content item-input item-input-with-value">
+              <div class="item-inner">
+                <div class="item-input-wrap">
+                  <input type="text" placeholder="Usuário" id="input-login-user" name="username" class="input-with-value"
+                    required="required">
+                  <span class="input-clear-button"></span>
+                </div>
+              </div>
+            </li>
+            <div></div>
+            <li class="item-content item-input">
+              <div class="item-inner">
+                <div class="item-input-wrap">
+                  <input type="password" placeholder="Senha" id="input-login-pws" name="password" class="font-serrat input-with-value"
+                    required="required">
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="list">
+          <ul>
+            <li>
+              <a href="#" class="list-button" id="button-reset2" @click="">Resetar Senha</a>
+            </li>
+          </ul>
+        </div>
+      </form>
+      <div class="link-login-rec"><a href="/login/" class="font-serrat link-login-rec-a">Fazer Login</a></div>
+
+    </div>
+  </div>
+</template>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+<script>
+  return {
+    data: function () {
+      return {
+        usuariosLogados: [
+          {
+            name: localStorage.userPerfilName,
+            username: localStorage.username
+          }
+
+
+        ]
+      }
+    },
+    methods: {
+      signIn: function () {
+        var $ = this.$;
+        var app = this.$app;
+        var router = this.$router;
+        var username = $('input#username').val();
+        var password = $('input#password').val();
+        console.log(username, password);
+
+        let data = { username: username, password: password }
+        let url = 'http://192.168.43.80:8000/';
+
+
+        if ((username && password)) {
+          console.log('fetch', data);
+
+          fetch(url,
+            {
+              method: "post",
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify(data)
+            })
+            .then(res => res.json())
+            .then(user => {
+              console.log(user);
+
+
+            })
+            .catch(function (error) {
+              console.log('Request failure: ', error);
+              app.dialog.alert('E ' + error, function () {
+                app.loginScreen.close();
+                //router.navigate('/menu/');
+              })
+            });
+
+
+        } else {
+
+          app.dialog.alert('Informe seus dados' + password, function () { router.navigate('/menu/'); })
+        }
+      },
+      setUser: function (username) {
+        this.$('#username').value = username;
+        document.getElementById('username').value = username;
+        this.$app.data.username = username;
+      }
+    }
+  }
+</script>

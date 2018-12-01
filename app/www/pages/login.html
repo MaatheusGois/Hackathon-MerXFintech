@@ -1,0 +1,79 @@
+<template>
+  <div class="page no-toolbar no-navbar">
+    <div class="page-content login-screen-content background background-login">
+
+
+      <form class="height-top-40vh padd-lr-5vw">
+        <div class="list">
+          <ul>
+            <li class="item-content item-input item-input-with-value">
+              <div class="item-inner">
+                <div class="item-input-wrap">
+                  <input type="text" placeholder="Usuário" id="input-login-user" name="username" class="input-with-value" required="required">
+                  <span class="input-clear-button"></span>
+                </div>
+              </div>
+            </li>
+            <div></div>
+            <li class="item-content item-input">
+              <div class="item-inner">
+                <div class="item-input-wrap">
+                  <input type="password" placeholder="Senha" id="input-login-pws" name="password" class="font-serrat input-with-value" required="required">
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="list">
+          <ul>
+            <li>
+              <a href="#" class="list-button" id="button-login" @click="signIn">Sign In</a>
+            </li>
+          </ul>
+        </div>
+      </form>
+      <div class="link-login-rec"><a href="/esqueciSenha/" class="font-serrat link-login-rec-a">Esqueci Minha Senha</a></div>
+
+    </div>
+  </div>
+</template>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+<script>
+  return {
+    data: function () {
+      return {
+        usuariosLogados: [
+          {
+            name: localStorage.userPerfilName,
+            username: localStorage.username
+          }
+
+
+        ]
+      }
+    },
+    methods: {
+      signIn: function () {
+        var $ = this.$;
+        var app = this.$app;
+        var router = this.$router;
+        var username = $('input#username').val();
+        var password = $('input#password').val();
+        
+        let data = { username: username, password: password }
+
+        if ((username && password)) {
+          router.navigate('/menu/');
+        } else {
+          app.dialog.alert('Seja Bem Vindo!', function () { router.navigate('/menu/'); })
+        }
+      },
+      setUser: function (username) {
+        this.$('#username').value = username;
+        document.getElementById('username').value = username;
+        this.$app.data.username = username;
+      }
+    }
+  }
+</script>

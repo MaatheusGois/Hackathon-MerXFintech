@@ -1,0 +1,95 @@
+<template>
+  <div class="page">
+    <div class="navbar">
+      <div class="navbar-inner sliding">
+        <div class="left">
+          <a href="#" class="link back">
+            <i class="icon icon-back"></i>
+            <span></span>
+          </a>
+        </div>
+        <div class="title">{{titulo}}</div>
+      </div>
+    </div>
+
+    <div class="page-content">
+      <div class="block">
+        <div class="list">
+          <ul>
+            {{#each avisos}}
+              <li>
+                <a href="{{link}}" class="item-link item-content">
+                  <div class="block">
+                    <i class="f7-icons color-c-{{color}}">{{flag}}</i>
+                  </div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <div class="item-header">{{txt}}</div>
+                      {{nome}}
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</template>
+<style>
+  .color-c-red {
+    color: #f44336;
+  }
+  .color-c-yellow {
+    color: #ffcc00;
+  }
+  .color-c-blue {
+    color: #007aff;
+  }
+</style>
+<script>
+  return {
+    data: function () {
+      return {
+        titulo: 'Avisos',
+        avisos: [
+          {
+            nome: 'Jackson Roberto Souza',
+            flag: 'alarm_fill',
+            txt: 'Há perguntas a serem respondidas.',
+            color: 'red',
+            link: '/avaliations/'
+          }, {
+            nome: 'Ana Paula',
+            flag: 'flag_fill',
+            color: 'yellow',
+            txt: 'Informações incompletas',
+            link: '/avaliations/'
+          }, {
+            nome: 'Julia Pereira',
+            flag: 'bell',
+            color: 'blue',
+            txt: 'Há novas perguntas',
+            link: '/avaliations/'
+          }
+        ]
+      }
+    },
+    methods: {
+      confirmaSair: function () {
+        var $ = this.$;
+        var app = this.$app;
+        var router = this.$router;
+        app.dialog.confirm('Tem certesa que deseja sair?', function () {
+          app.dialog.alert('Até logo!');
+          // TODO: User Logout
+          app.popover.close('.popover-links');
+          router.navigate('/index/');
+        });
+      }
+    }
+  }
+</script>
