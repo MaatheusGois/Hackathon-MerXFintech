@@ -37,6 +37,8 @@ $ ./manage.py migrate # this setup the Django database
 $ ./manage.py runserver 0:8000
 ```
 
+To check the front-end, open `app/www/index.html`.
+
 #### API
 
 - Login `url.com/login/`
