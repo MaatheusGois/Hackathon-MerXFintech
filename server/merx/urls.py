@@ -19,5 +19,8 @@ from . import views
 
 urlpatterns = [
     path('login/', views.login, name='login'),
-    path('get_money/', views.get_money, name='get_money')
+    path('use_service/', views.use_service, name='use_service'),
+    path('get_money/', views.get_money, name='get_money'),
+    path('insert_money/', views.insert_money, name='insert_money'),
+    #path('get_user_data/', views.get_user_data, name='get_user_data'),
 ]

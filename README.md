@@ -99,3 +99,7 @@ Else:
     'money' : -1
 }
 ```
+
+- Insert money in a user cash
+
+- Use a service
