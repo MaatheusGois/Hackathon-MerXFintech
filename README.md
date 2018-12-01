@@ -37,3 +37,37 @@ $ ./manage.py migrate # this setup the Django database
 $ ./manage.py runserver 0:8000
 ```
 
+#### API
+
+- Login `url.com/login/`
+
+**Send:**
+
+```
+{ 
+    'username' : <cpf>,
+    'password' : <password>
+}
+```
+
+**Receive:**
+
+If success:
+
+```
+{
+    'login': 'true'
+    'name' : <user_name>,
+    'surname' : <user_surname>,
+    'money' : <user_money>,
+    'birthday' : <user_birthday>
+}
+```
+
+Else:
+
+```
+{
+    'login' : 'false'
+⁾)
+```
