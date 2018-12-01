@@ -7,6 +7,12 @@ transport in Americas.
 **Merx Fintec** is a solution aimed be a digital wallet for transportation
 services, like taxi cab apps, bikes rentals and public transport.
 
+### Dependencies
+
+- Python3:
+    - Django
+    - Requests
+
 ### Installing
 
 The server is written in Django and is  placed on `server/` folder. Follow this steps to setup the server:
