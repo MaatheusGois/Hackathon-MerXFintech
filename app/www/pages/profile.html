@@ -1,0 +1,90 @@
+<template>
+  <div class="page">
+    <div class="navbar">
+      <div class="navbar-inner sliding">
+        <div class="left">
+          <a href="#" class="link back">
+            <i class="icon icon-back"></i>
+            <span></span>
+          </a>
+        </div>
+        <div class="title">Perfil</div>
+      </div>
+    </div>
+    <div class="page-content">
+      <form class="list" id="my-form">
+        <ul>
+          <li>
+            <div class="item-content item-input">
+              <div class="item-inner">
+                <div class="item-title item-label">Nome</div>
+                <div class="item-input-wrap">
+                  <input type="text" placeholder="Não Cadastrado" value="{{name}}" disabled="disabled">
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="item-content item-input">
+              <div class="item-inner">
+                <div class="item-title item-label">Nascimento</div>
+                <div class="item-input-wrap">
+                  <input type="date" disabled="disabled" value="{{date}}">
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="item-content item-input">
+              <div class="item-inner">
+                <div class="item-title item-label">CPF</div>
+                <div class="item-input-wrap">
+                  <input type="text" placeholder="Não Cadastrado" value="{{cpf}}" disabled="disabled">
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="item-content item-input">
+              <div class="item-inner">
+                <div class="item-title item-label">Instituição</div>
+                <div class="item-input-wrap">
+                  <input type="text" placeholder="Não Cadastrado" value="{{creche}}" disabled="disabled">
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </form>
+    </div>
+
+  </div>
+</template>
+
+<script>
+  return {
+    data: function () {
+      return {
+            name: localStorage.userPerfilName,
+            date: localStorage.userPerfilDate,
+            cpf: localStorage.userPerfilCPF,
+            creche: localStorage.userPerfilCreche,
+      }
+    },
+    on: {
+      pageInit: function (e, page) {
+        console.log(localStorage);
+
+      }
+    },
+    methods: {
+      editData: function () {
+        this.$$('input').removeAttr('disabled');
+        this.$$('select').removeAttr('disabled');
+        this.$$('#avBtn-sec').hide();
+        this.$$('#editBTN').hide();
+        this.$$('#saveBTN').show();
+      }
+    }
+  }
+</script>

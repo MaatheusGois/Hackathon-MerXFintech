@@ -1,0 +1,141 @@
+<template>
+  <div class="page no-toolbar no-navbar">
+    <div class="page-content login-screen-content">
+      <div class="login-screen-title">Entrar</div>
+
+      <form>
+        <div class="list">
+          <ul>
+            <li class="item-content item-input item-input-with-value">
+              <div class="item-inner">
+                <div class="item-title item-label">Username</div>
+                <div class="item-input-wrap">
+                  <input type="text" placeholder="Your username" id="username" name="username" class="input-with-value" required="required">
+                  <span class="input-clear-button"></span>
+                </div>
+              </div>
+            </li>
+            <li class="item-content item-input">
+              <div class="item-inner">
+                <div class="item-title item-label">Password</div>
+                <div class="item-input-wrap">
+                  <input type="password" placeholder="Your password" id="password" name="password" class="">
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="list">
+          <ul>
+            <li>
+              <a href="#" class="list-button" @click="signIn">Sign In</a>
+            </li>
+          </ul>
+        </div>
+      </form>
+      <div class="block">
+        <div class="block-title text-align-center">
+          <p>Usuários</p>
+        </div>
+        <div class="block">
+          <div class="list links-list">
+            <ul>
+              {{#each usuariosLogados}}
+              <li class="swipeout">
+                <div class="swipeout-content">
+                  <a href="#" @click="setUser('{{username}}')">{{name}}</a>
+                </div>
+                <div class="swipeout-actions-left">
+                  <!-- Add this button and item will be deleted automatically -->
+                  <a href="#" class="swipeout-delete ">X</a>
+                </div>
+              </li>
+              {{/each}}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+<script>
+  return {
+    data: function () {
+      return {
+        usuariosLogados: [
+          {
+            name: localStorage.userPerfilName,
+            username: localStorage.username
+          }
+
+
+        ]
+      }
+    },
+    methods: {
+      signIn: function () {
+        var $ = this.$;
+        var app = this.$app;
+        var router = this.$router;
+        var username = $('input#username').val();
+        var password = $('input#password').val();
+        let data = { username: username, password: password }
+        let url = 'http://201.6.243.44:3877/api/login';
+
+
+        if ((username && password)) {
+          fetch(url,
+            {
+              method: "post",
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify(data)
+            })
+            .then(res => res.json())
+            .then(user => {
+              if (!user) {
+                  app.dialog.alert('Usuário ou Senha Inválidos', function () { })
+              } else {
+                localStorage.logged = true
+                localStorage.username = user.username
+                localStorage.userID = user.userID
+                localStorage.type = user.type
+                localStorage.crecheID = user.crecheID
+                localStorage.userPerfilCreche = user.creche
+                localStorage.userPerfilName = user.userPerfil.name
+                localStorage.userPerfilCPF = user.userPerfil.cpf
+                localStorage.userPerfilDate = user.userPerfil.date
+                //this.usuariosLogados.push({name:username, username:username})
+                this.$app.data.username = username
+                app.dialog.alert('Seja Bem Vindo ' + username, function () {
+                  app.loginScreen.close();
+                  router.navigate('/menu/');
+                })
+              }
+
+            })
+            .catch(function (error) {
+              console.log('Request failure: ', error);
+              app.dialog.alert('E ' + error, function () {
+                  app.loginScreen.close();
+                  router.navigate('/menu/');
+              })
+            });
+
+
+        } else {
+                  
+          app.dialog.alert('Informe seus dados' + password, function () { router.navigate('/menu/'); })
+        }
+      },
+      setUser: function (username) {
+        this.$('#username').value = username;
+        document.getElementById('username').value = username;
+        this.$app.data.username = username;
+      }
+    }
+  }
+</script>
