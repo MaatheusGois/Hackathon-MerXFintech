@@ -7,7 +7,8 @@ var app = new Framework7({
   name: 'App',
   id: 'br.mackenzie.lfs.App',
   root: '#app',
-  theme: 'auto',
+  theme: 'md',
+  swipePanel: 'left',
   routes: [{
     path: '/about/',
     url: './pages/about.html',
@@ -21,9 +22,40 @@ var app = new Framework7({
     path: '/index/',
     url: './index.html',
   }, {
-    path: '/profile/',
-    componentUrl: './pages/profile.html'
-  }]
+    path: '/perfil/',
+    componentUrl: './pages/perfil.html'
+  }, {
+    path: '/esqueciSenha/',
+    componentUrl: './pages/esqueciSenha.html'
+  }, {
+    path: '/99/',
+    componentUrl: './pages/99.html'
+  }, {
+    path: '/bilheteUnico/',
+    componentUrl: './pages/bilheteUnico.html'
+  }, {
+    path: '/yellow/',
+    componentUrl: './pages/yellow.html'
+  }, {
+    path: '/historico/',
+    componentUrl: './pages/historico.html'
+  },
+  {
+    path: '/left-panel/',
+    panel: {
+      content: `
+        <div class="panel panel-left panel-cover">
+          <div class="view">
+            <div class="page">
+              <h1>EIIIIII</h1>
+            </div>
+          </div>
+        </div>
+      `
+    }
+  },
+
+]
 });
 
 var mainView = app.views.create('.view-main');

@@ -1,0 +1,86 @@
+<template>
+  <div class="page">
+    <div class="page-content background-perfil">
+      <div class="nav-perfil">
+        <a href="#" class="link back">
+          <i class="icon icon-back color-white"></i>
+        </a>
+      </div>
+      <div class="aprensentacao-perfil">
+        <div class="aprensentacao-perfil-imagem">
+
+        </div>
+        <div class="aprensentacao-perfil-nome">
+          <p>Olá,<b> Fernando</b></p>
+          <p>22 anos, SP</p>
+        </div>
+      </div>
+
+      <hr class="hr-personalizado">
+
+      <div class="" id="card-menu">
+        <div class="card-h-a">
+          <p class="colorWhite card-h-p1-a">Seu saldo atual é de</p>
+          <p class="colorWhite card-h-p2-a">R$ 304,00</p>
+        </div>
+        <div class="card-f-a">
+          <p class="card-f-p1-a">Adiquira mais creditos</p>
+        </div>
+      </div>
+
+      <div class="links-perfil-c">
+        <div class="links-perfil">
+          <a>Histórico</a>
+        </div>
+        <hr class="hr-personalizado">
+
+        <div class="links-perfil">
+          <a>Configurações</a>
+        </div>
+        <hr class="hr-personalizado">
+
+        <div class="links-perfil">
+          <a>Empresa</a>
+        </div>
+        <hr class="hr-personalizado">
+
+        <div class="links-perfil">
+          <a>Ajuda</a>
+        </div>
+        <hr class="hr-personalizado">
+
+        <div class="links-perfil">
+          <a @click="sair">Sair</a>
+        </div>
+      </div>
+    </div>
+
+    <br><br><br><br>
+
+  </div>
+  </div>
+</template>
+
+<script>
+  return {
+    data: function () {
+      return {
+      }
+    },
+    on: {
+
+    },
+    methods: {
+      sair: function () {
+        var $ = this.$;
+        var app = this.$app;
+        var router = this.$router;
+        app.dialog.confirm('Tem certesa que deseja sair?', function () {
+          app.dialog.alert('Até logo!');
+          // TODO: User Logout
+          router.navigate('/login/');
+        });
+      }
+    }
+  }
+</script>

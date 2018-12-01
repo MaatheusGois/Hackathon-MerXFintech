@@ -1,0 +1,516 @@
+.body{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.background-index{
+    background: url("../img/tela-abertura.png");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+}
+
+
+.background-bilheteUnico{
+    background: url("../img/tela-bilhete.png");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+}
+
+.background-99{
+    background: url("../img/tela-99.png");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+}
+.background-yellow{
+    background: url("../img/tela-yellow.png");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+}
+
+.background-perfil{
+    background: url("../img/tela-perfil.png");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+}
+
+.background-menu{
+    background: url("../img/tela-home.png");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+}
+
+.background-login{
+    background: url("../img/tela-login.png");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+}
+
+.font-serrat{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.height-top-40vh{
+    margin-top:40vh; 
+}
+.padd-lr-5vw{
+    padding-left: 5vw;
+    padding-right: 5vw;
+}
+#button-login{
+    background-color: #f3f3f3;
+    border-radius: 10px;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    color: #019768;
+    font-size: 1.3em;
+}
+
+.md .list input[type="date"], .md .list input[type="datetime-local"], .md .list input[type="email"], .md .list input[type="number"], .md .list input[type="password"], .md .list input[type="search"], .md .list input[type="tel"], .md .list input[type="text"], .md .list input[type="time"], .md .list input[type="url"], .md .list select {
+    color: #f3f3f3;
+}
+
+.md .item-input-focused .item-input-wrap::after{
+    background: #f3f3f3;
+}
+.md .item-input-wrap::after{
+    background: #f3f3f3;
+}
+
+#input-login-user{
+    color: #f3f3f3;
+    font-size: 1.2em;
+}
+#input-login-pws{
+    color: #f3f3f3;
+    font-size: 1.2em;
+}
+
+.link-login-rec{
+    margin-top: 5vh;
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: stretch;
+}
+
+.link-login-rec .link-login-rec-a{
+    color: #f3f3f3;
+
+}
+
+#button-reset{
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: stretch;
+    background-color: #f3f3f3;
+    border-radius: 10px;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    color: #019768;
+    font-size: 1em;
+    margin-top: 0;
+    height: 5vh;
+    margin-top: -15vh;
+}
+
+#button-reset2{
+    background-color: #012224;
+    border-radius: 10px;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    color: #019768;
+    margin-top: 5vh;
+    font-size: 1.3em;
+}
+
+
+
+.link-login-rec2{
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: stretch;
+}
+
+#card-menu{
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+    align-content: stretch;
+    padding: 20px;
+
+}
+.card-h{
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: stretch;
+    background-color: #00e09a;
+    border-radius: 10px 10px 0 0;
+    height: 20vh;
+    width: 80vw;
+}
+.card-f{
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: stretch;
+    height: 10vh;
+    width: 80vw;
+
+    background-color: #f3f3f3;
+    border-radius:0 0 10px 10px ;
+
+
+}
+
+.colorWhite{
+    color: #f3f3f3;
+}
+
+.card-h-p1{
+    font-size: 1.3em;
+    
+}
+
+.card-h-p2{
+    font-size: 3em;
+    margin: 0;
+}
+
+.card-f-p1{
+    font-size: 1.3em;
+    color: #00e09a;
+
+}
+
+.possibilidades-menu{
+    font-size: 1em;
+    margin-left: 10vw;
+}
+
+.possibilidades-menu-p{
+    color: #f3f3f3;
+}
+
+.butons-menu-app{
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: center;
+    align-content: stretch;
+    margin-top: 5vh;
+}
+.butons-menu-app .button-login{
+    background-color: #00e09a;
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+    width: 80vw;
+    height: 6.5vh;
+    margin-top: 2vh;
+    color: #012224;
+    border-radius: 8px;
+}
+
+.perfil{
+    height: 20vh;
+    width: 100vw;
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: flex-end;
+	align-content: center;
+}
+
+.perfil .img-perfil{
+    height: 8vh;
+    width: 8vh;
+    margin-right: 10vw;
+    background-color: #00e09a;
+    background-image: url("../img/jose.jpg");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+    border-radius: 50%;
+
+}
+
+
+.nav-perfil{
+    height: 10vh;
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: center;
+	align-content: center;
+}
+.nav-perfil a{
+    margin-left: 3vh;
+}
+
+.aprensentacao-perfil{
+    height: 20vh;
+    width: 100vw;
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+
+.aprensentacao-perfil-imagem{
+    height: 15vh;
+    width: 26vw;
+    background-color: #00e09a;
+    border-radius: 50%;
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+    align-content: center;
+    background-image: url("../img/jose.jpg");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+}
+
+.aprensentacao-perfil-nome{
+    height: 20vh;
+    width: 50vw;
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+
+.aprensentacao-perfil-nome p{
+    color: #f3f3f3;
+    font-size: 1.3em;
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+    align-content: center;
+    margin: 0;
+}
+.aprensentacao-perfil-nome p b{
+    color: #007a54;
+    margin-left: 0.6px;
+}
+
+.hr-personalizado{
+    margin-left: 13vw;
+    margin-right: 13vw;
+}
+
+.card-h-a{
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: stretch;
+    background-color: #00e09a;
+    border-radius: 10px 10px 0 0;
+    height: 13vh;
+    width: 80vw;
+}
+
+
+.card-h-p1-a{
+    font-size: 1.3em;
+    margin: 0;
+    margin-top: 4px;
+    margin-bottom: -17px;
+    
+}
+
+.card-h-p2-a{
+    font-size: 3em;
+    margin: 0;
+}
+
+.card-f-p1-a{
+    font-size: 1.3em;
+    color: #00e09a;
+
+}
+
+.card-f-a{
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: stretch;
+    height: 8vh;
+    width: 80vw;
+
+    background-color: #f3f3f3;
+    border-radius:0 0 10px 10px ;
+
+
+}
+.links-perfil-c{
+    margin-top: 2vh;
+    margin-bottom: 5vh;
+}
+.links-perfil{
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: center;
+    align-content: center;
+    
+}
+.links-perfil a{
+    color: #007a54;
+    margin: 0;
+    font-size: 1.3em;
+    margin-left: 15vw;
+}
+
+.perfil-nav-all{
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: center;
+	align-content: flex-start;
+    width: 100vw;
+    height: 13vh;
+    margin-left: 5vw;
+    margin-right: 30vw;
+    margin: 0;
+
+}
+.perfil-nav-all a{
+    height: 10vh;
+    width: 10vh;
+}
+
+.perfil-nav-all a{
+    height: 10vh;
+    width: 10vh;
+}
+
+.img-perfil-all{
+    height: 8vh;
+    width: 8vh;
+    margin-right: 10vw;
+    background-color: #00e09a;
+    background-image: url("../img/jose.jpg");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+    border-radius: 50%;
+    margin: 0;
+    margin-right: 5vw;
+    margin-top: 1vh;
+}
+
+.historico-nome{
+    width: 100vw;
+    height: 15vh;
+    color: #007a54;
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: center;
+    align-content: center;
+    font-size: 2em;
+    margin: 0;
+    margin-left: 15vw;
+}
+
+.historico-nome-texto{
+    height: 10vh;
+    width: 100vw;
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+
+.historico-nome-texto p{
+    color: #f3f3f3;
+    font-size: 1.3em;
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+    align-content: center;
+    margin: 0;
+}
+.historico-nome-texto p b{
+    color: #007a54;
+    margin-left: 2px;
+}
+
+.historico-rec{
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+    align-content: stretch;
+    margin: 0;
+}
+
+.historico-rec .historico-rec-a{
+    color: #f3f3f3;
+}
+
+#historico-button{
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: stretch;
+    background-color: #f3f3f3;
+    border-radius: 10px;
+    margin-left: 13vw;
+    margin-right: 13vw;
+    color: #019768;
+    font-size: 1em;
+    margin-top: 0;
+    height: 5vh;
+    
+}

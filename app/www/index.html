@@ -28,14 +28,7 @@
         <!-- Initial Page, "data-name" contains page name -->
         <div data-name="home" class="page">
           <div class="page no-toolbar no-navbar no-swipeback">
-            <div class="page-content">
-                
-              <div class="block-title text-align-center">
-                <h1>Block title</h1>
-              </div>
-              <div class="block">
-                <a href="/login/" class="button button-big button-outline button-round" style="margin-top: 30vh;">Entrar</a>
-              </div>
+            <div class="page-content background-index">
             </div>
           </div>
         </div>
@@ -47,5 +40,10 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
   </body>
-
+  <script>
+    function trocarDeTela() {
+      app.router.navigate('/login/');
+    }
+    setTimeout(trocarDeTela, 3000);
+  </script>
 </html>

@@ -1,36 +1,28 @@
 <template>
   <div class="page no-swipeback">
-    <div class="navbar">
-      <div class="navbar-inner sliding">
-        <div class="title">{{titulo}}</div>
-        <div class="right">
-          <a class="link popover-open" href="#" data-popover=".popover-links"><i class="f7-icons color-c-white">person_round</i></a>
-        </div>
-      </div>
-    </div>
-    <div class="page-content">
-
-
-      <div class="block nopad">
-        <div class="card demo-card-header-pic">
-          <div style="background-image:url(./img/crianca.jpg)" class="card-header align-items-flex-end">
-            <b>Lista</b>
-          </div>
-          <div class="block" style="padding-right: 0;padding-left: 0;">
-            <a href="/chList/" class="button">Entrar</a>
-          </div>
-        </div>
+    <div class="page-content background-menu">
+      <div class="perfil">
+        <a href="/perfil/" class="img-perfil"></a>
       </div>
 
-      <div class="block">
-        <div class="card demo-card-header-pic">
-          <div style="background-image:url(./img/avaliacao.jpg)" class="card-header align-items-flex-end">
-            <b>Avisos</b>
+      <a href="/historico/">
+        <div class="" id="card-menu">
+          <div class="card-h">
+            <p class="colorWhite card-h-p1">Seu saldo atual é de</p>
+            <p class="colorWhite card-h-p2">R$ 304,00</p>
           </div>
-          <div class="block" style="padding-right: 0;padding-left: 0;">
-            <a href="/warnings/" class="button">Entrar</a>
+          <div class="card-f">
+            <p class="card-f-p1">Adiquira mais creditos</p>
           </div>
         </div>
+      </a>
+      <div class="possibilidades-menu">
+        <p class="possibilidades-menu-p">> Suas Possibilidades</p>
+      </div>
+      <div class="butons-menu-app">
+        <a href="/99/" class="list-button button-login">99</a>
+        <a href="/yellow/" class="list-button button-login">YELLOW</a>
+        <a href="/bilheteUnico/" class="list-button button-login">BILHETE ÚNICO</a>
       </div>
 
     </div>
